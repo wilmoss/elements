@@ -18,6 +18,9 @@
                                left top,
                                @start,
                                @stop);
+  background: -ms-linear-gradient(bottom,
+                                  @start,
+                                  @stop);
   background: -moz-linear-gradient(center bottom,
                                    @start 0%,
                                    @stop 100%);
@@ -29,6 +32,9 @@
                                left top,
                                color-stop(0, rgb(@start,@start,@start)),
                                color-stop(1, rgb(@stop,@stop,@stop)));
+  background: -ms-linear-gradient(bottom,
+                                  rgb(@start,@start,@start) 0%,
+                                  rgb(@start,@start,@start) 100%);
   background: -moz-linear-gradient(center bottom,
                                    rgb(@start,@start,@start) 0%,
                                    rgb(@stop,@stop,@stop) 100%);
