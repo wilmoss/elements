@@ -54,7 +54,9 @@
   -webkit-border-radius: @radius;
   -moz-border-radius: @radius;
   border-radius: @radius;
-  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; 
+  -moz-background-clip: padding; 
+  -webkit-background-clip: padding-box; 
+  background-clip: padding-box; 
 }
 .border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
   -webkit-border-top-right-radius: @topright;
@@ -76,6 +78,8 @@
   -khtml-opacity: @opacity;
   -webkit-opacity: @opacity;
   opacity: @opacity;
+  @opperc: @opacity * 100;
+  filter: ~"alpha(opacity=@{opperc})";
 }
 .transition-duration(@duration: 0.2s) {
   -moz-transition-duration: @duration;
