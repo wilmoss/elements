@@ -54,9 +54,7 @@
   -webkit-border-radius: @radius;
   -moz-border-radius: @radius;
   border-radius: @radius;
-  -moz-background-clip: padding; 
-  -webkit-background-clip: padding-box; 
-  background-clip: padding-box; 
+  .background-clip(padding-box);
 }
 .border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
   -webkit-border-top-right-radius: @topright;
@@ -71,7 +69,7 @@
   border-bottom-right-radius: @bottomright;
   border-bottom-left-radius: @bottomleft;
   border-top-left-radius: @topleft;
-  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; 
+  .background-clip(padding-box);
 }
 .opacity(@opacity: 0.5) {
   -moz-opacity: @opacity;
@@ -88,7 +86,7 @@
   -o-transition-duration: @duration;
   transition-duration: @duration;
 }
-.transform() {
+.transform(...) {
   -webkit-transform: @arguments;
   -moz-transform: @arguments;
   -o-transform: @arguments;
@@ -99,7 +97,7 @@
   .transform(rotate(@deg));
 }
 .scale(@ratio:1.5){
-  .transform(scale(@deg));
+  .transform(scale(@ratio));
 }
 .transition(@duration:0.2s, @ease:ease-out) {
   -webkit-transition: all @duration @ease;
@@ -152,4 +150,8 @@
 .translate(@x:0, @y:0) {
   .transform(translate(@x, @y));
 }
-
+.background-clip(@argument: padding-box) {
+  -moz-background-clip: @argument;
+  -webkit-background-clip: @argument;
+  background-clip: @argument;
+}
